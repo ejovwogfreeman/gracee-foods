@@ -10,9 +10,9 @@ const Navbar = () => {
       <div className="logo">
         <Link to="/">
           <img src={logo} alt="" />
-          <span>
+          <span className="text">
             <h2>GRACEE</h2>
-            <span>foods</span>
+            <span className="foods">foods</span>
           </span>
         </Link>
       </div>
