@@ -77,3 +77,11 @@ h3 {
     object-fit: cover;
   }
 }
+@media screen and (max-width: 500px) {
+  .owl-nav {
+    top: 40%;
+  }
+  .owl-theme .item .text {
+    top: 45%;
+  }
+}
