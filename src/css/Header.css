@@ -1,90 +1,82 @@
 header {
-    background-color: #00302E;
-    color: white;
-    padding: 200px 3% 120px 4.7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: #00302e;
+  color: white;
+  padding: 120px 3% 120px 4.7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header-text {
-    flex: 1;
+  flex: 1;
 }
 
 .header-text h1 {
-    font-size: 60px;
+  font-size: 60px;
 }
 
 .header-text .download {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .header-text .download img {
-    width: 150px;
-    margin-right: 20px;
+  width: 150px;
+  margin-right: 20px;
 }
 
 .header-img {
-    flex: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.header-img img {
-    width: 60%;
-    margin: auto;
+/* @media screen and (max-width: 780px) {
+  .header-text h1 {
+    font-size: 30px;
+  }
+
+  header {
+    border-bottom: 1px solid rgba(256, 256, 256, 0.5);
+  }
+} */
+
+@media screen and (max-width: 900px) {
+  .header-text h1 {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 150px 3% 60px 3%;
+  }
+
+  br {
+    display: none;
+  }
+
+  .header-text .download {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-text .download img {
+    width: 150px;
     display: block;
+    margin: auto;
+  }
+
+  .header-text .download .google {
+    margin-right: 10px;
+  }
+
+  .header-text .download .apple {
+    margin-left: 10px;
+  }
 }
-
-@media screen and (max-width: 780px) {
-
-    .header-text h1 {
-        font-size: 30px;
-    }
-    
-    header {
-        border-bottom: 1px solid rgba(256, 256, 256, 0.5);
-    }
-}
-
-@media screen and (max-width: 600px) {
-
-    .header-text h1 {
-        font-size: 30px;
-        margin-top: 20px;
-    }
-
-    header {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: space-between;
-        text-align: center;
-        padding: 150px 3% 60px 4.7%;
-    }
-
-    br {
-        display: none;
-
-    }
-
-    .header-text .download {
-        display: flex;
-        align-items: center;
-    }
-
-    .header-text .download img {
-        width: 150px;
-        display: block;
-        margin: auto;
-    }
-
-    .header-text .download .google {
-        margin-right: 10px;
-    }
-
-    .header-text .download .apple {
-        margin-left: 10px;
-    }
-    
-}
-

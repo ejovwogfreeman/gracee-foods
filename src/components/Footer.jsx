@@ -58,18 +58,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div style={{ borderBottom: "0px" }}>
-          <h5>Install App</h5>
+        <div>
+          <h5>Food Card</h5>
           <ul>
             <li>
-              <a href="">
-                <img src={img1} alt="" />
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <img src={img2} alt="" />
-              </a>
+              <a href="">Get Food Card</a>
             </li>
           </ul>
         </div>

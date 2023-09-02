@@ -1,8 +1,9 @@
 import React from "react";
 import "../css/Header.css";
-import img from "../assets/header-img.png";
+// import img from "../assets/header-img.png";
 import img1 from "../assets/googleplay.png";
 import img2 from "../assets/appstore.png";
+import Slider from "./Slider";
 
 const Header = () => {
   return (
@@ -18,12 +19,13 @@ const Header = () => {
           delivered to you in no time. Affordable, tasty and fast!
         </p>
         <div className="download">
-          <img src={img1} alt="google-play" className="google" />
-          <img src={img2} alt="apple-store" className="apple" />
+          {/* <img src={img1} alt="google-play" className="google" />
+          <img src={img2} alt="apple-store" className="apple" /> */}
         </div>
       </div>
       <div className="header-img">
-        <img src={img} alt="food" />
+        <Slider />
+        {/* <img src={img} alt="food" /> */}
       </div>
     </header>
   );
