@@ -3,7 +3,7 @@ import "../css/Footer.css";
 // import img1 from "../assets/googleplay.png";
 // import img2 from "../assets/appstore.png";
 import {
-  AiOutlineFacebook,
+  // AiOutlineFacebook,
   AiOutlineInstagram,
   AiOutlineTwitter,
   AiFillYoutube,
@@ -69,16 +69,16 @@ const Footer = () => {
       <div className="sub-footer">
         <p>&copy; {year} GRACEE FOODS, All rights reserved.</p>
         <div className="icons">
-          <a href="" className="icon">
+          {/* <a href="" className="icon">
             <AiOutlineFacebook />
-          </a>
-          <a href="" className="icon">
+          </a> */}
+          <a href="https://www.instagram.com/graceefoods/" className="icon">
             <AiOutlineInstagram />
           </a>
-          <a href="" className="icon">
+          <a href="https://twitter.com/graceefoods" className="icon">
             <AiOutlineTwitter />
           </a>
-          <a href="" className="icon">
+          <a href="https://www.youtube.com/@graceefoods " className="icon">
             <AiFillYoutube />
           </a>
         </div>
