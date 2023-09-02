@@ -1,7 +1,7 @@
 header {
   background-color: #00302e;
   color: white;
-  padding: 120px 3% 120px 4.7%;
+  padding: 120px 3% 80px 4.7%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,7 +12,14 @@ header {
 }
 
 .header-text h1 {
-  font-size: 60px;
+  font-size: 50px;
+}
+
+header a {
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #e2b887;
 }
 
 .header-text .download {
@@ -31,16 +38,6 @@ header {
   align-items: center;
   justify-content: center;
 }
-
-/* @media screen and (max-width: 780px) {
-  .header-text h1 {
-    font-size: 30px;
-  }
-
-  header {
-    border-bottom: 1px solid rgba(256, 256, 256, 0.5);
-  }
-} */
 
 @media screen and (max-width: 900px) {
   .header-text h1 {
@@ -78,5 +75,10 @@ header {
 
   .header-text .download .apple {
     margin-left: 10px;
+  }
+  header a {
+    display: block;
+    width: 200px;
+    margin: auto;
   }
 }

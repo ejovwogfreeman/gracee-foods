@@ -5,11 +5,15 @@ nav {
   position: fixed;
   z-index: 100;
   width: 100%;
-  background-color: rgba(256, 256, 256, 0.8);
   padding: 50px 3%;
   color: #eee;
   background-color: #00302e;
   height: 80px;
+}
+
+nav .logo {
+  position: relative;
+  top: -35px;
 }
 
 nav .logo img {
@@ -26,10 +30,24 @@ nav .logo a {
   color: white;
   display: flex;
   align-items: center;
+  position: absolute;
 }
 
 nav .logo a:hover {
   color: white;
+}
+
+nav .logo .text {
+  position: relative;
+  top: -5px;
+  left: -10px;
+}
+
+nav .logo .foods {
+  position: absolute;
+  letter-spacing: 21px;
+  left: 23px;
+  top: 33px;
 }
 
 nav a {
@@ -84,18 +102,6 @@ li a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.logo .text {
-  position: relative;
-}
-
-.logo .foods {
-  position: absolute;
-  letter-spacing: 21px;
-  left: 23px;
-  top: 33px;
-  word-wrap: unset;
-}
-
 @media screen and (max-width: 1080px) {
   .mui-drawer {
     display: block;
@@ -112,11 +118,10 @@ li a:hover {
     padding-right: 1%;
     border-bottom: 1px solid rgba(256, 256, 256, 0.5);
   }
-  .logo .foods {
+  nav .logo .foods {
     position: absolute;
     letter-spacing: 13px;
     left: 23px;
     top: 33px;
-    word-wrap: unset;
   }
 }

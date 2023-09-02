@@ -1,9 +1,10 @@
 import React from "react";
 import "../css/Header.css";
 // import img from "../assets/header-img.png";
-import img1 from "../assets/googleplay.png";
-import img2 from "../assets/appstore.png";
+// import img1 from "../assets/googleplay.png";
+// import img2 from "../assets/appstore.png";
 import Slider from "./Slider";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -18,10 +19,7 @@ const Header = () => {
           <br />
           delivered to you in no time. Affordable, tasty and fast!
         </p>
-        <div className="download">
-          {/* <img src={img1} alt="google-play" className="google" />
-          <img src={img2} alt="apple-store" className="apple" /> */}
-        </div>
+        <Link to="/">Buy Now</Link>
       </div>
       <div className="header-img">
         <Slider />
