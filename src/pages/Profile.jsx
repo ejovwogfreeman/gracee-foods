@@ -2,9 +2,10 @@ import React from "react";
 import Background from "./Background.jsx";
 import "../css/SingleFood.css";
 import profile from "../assets/profile.png";
-import { AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai";
+// import { AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Link, useParams } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop.jsx";
 
 const Profile = () => {
   let user = JSON.parse(sessionStorage.getItem("user"));
@@ -24,6 +25,7 @@ const Profile = () => {
 
   return (
     <div className="singlefood-container">
+      <ScrollToTop />
       <div className="food">
         <Background />
       </div>

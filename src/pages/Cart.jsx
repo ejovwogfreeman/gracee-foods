@@ -7,6 +7,7 @@ import "../css/Cart.css";
 // import img4 from '../assets/indomie.png'
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop.jsx";
 
 const Cart = ({ meals, onRemove }) => {
   // const meals = [
@@ -63,6 +64,7 @@ const Cart = ({ meals, onRemove }) => {
 
   return (
     <div className="cart-container">
+      <ScrollToTop />
       <div className="cart">
         <Background />
       </div>

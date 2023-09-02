@@ -1,12 +1,14 @@
 import React from "react";
 import Background from "./Background.jsx";
 import "../css/Cart.css";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+// import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop.jsx";
 
 const Page404 = () => {
   return (
     <div className="cart-container">
+      <ScrollToTop />
       <div className="cart">
         <Background />
       </div>

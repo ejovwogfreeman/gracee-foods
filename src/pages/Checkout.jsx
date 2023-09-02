@@ -3,6 +3,7 @@ import Background from "./Background.jsx";
 import "../css/SingleFood.css";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop.jsx";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ const Checkout = () => {
 
   return (
     <div className="singlefood-container">
+      <ScrollToTop />
       <div className="food">
         <Background />
       </div>

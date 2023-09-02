@@ -5,12 +5,14 @@ import "../css/SingleFood.css";
 import { AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Link, useParams } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop.jsx";
 
 const SingleFood = ({ meal, onAdd, onRemove, quantity }) => {
   const { id } = useParams();
 
   return (
     <div className="singlefood-container">
+      <ScrollToTop />
       <>
         {meal.id == id ? (
           <>
