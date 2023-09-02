@@ -1,14 +1,13 @@
 import React from "react";
 import "../css/Footer.css";
-import img1 from "../assets/googleplay.png";
-import img2 from "../assets/appstore.png";
+// import img1 from "../assets/googleplay.png";
+// import img2 from "../assets/appstore.png";
 import {
+  AiOutlineFacebook,
   AiOutlineInstagram,
   AiOutlineTwitter,
   AiFillYoutube,
 } from "react-icons/ai";
-// import { AiOutlineTwitter } from 'react-icons/ai'
-// import { AiFillYoutube } from 'react-icons/ai'
 
 const Footer = () => {
   let year = new Date().getFullYear();
@@ -70,6 +69,9 @@ const Footer = () => {
       <div className="sub-footer">
         <p>&copy; {year} GRACEE FOODS, All rights reserved.</p>
         <div className="icons">
+          <a href="" className="icon">
+            <AiOutlineFacebook />
+          </a>
           <a href="" className="icon">
             <AiOutlineInstagram />
           </a>
