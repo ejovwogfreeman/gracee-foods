@@ -82,3 +82,39 @@ header a {
     margin: auto;
   }
 }
+/* CSS */
+.owl-carousel .slow-slide-right-in {
+  animation-name: slowSlideRightInAnimation;
+  animation-duration: 2s; /* Adjust the duration as needed */
+  /* You can also customize other animation properties such as timing function, delay, etc. */
+}
+
+.owl-carousel .slow-slide-left-out {
+  animation-name: slowSlideLeftOutAnimation;
+  animation-duration: 2s; /* Adjust the duration as needed */
+  /* You can also customize other animation properties such as timing function, delay, etc. */
+}
+
+/* Define the slow slide-in animation from the right */
+@keyframes slowSlideRightInAnimation {
+  0% {
+    transform: translateX(100%); /* Start off-screen on the right */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Slide in from the right */
+    opacity: 1;
+  }
+}
+
+/* Define the slow slide-out animation to the left */
+@keyframes slowSlideLeftOutAnimation {
+  0% {
+    transform: translateX(0); /* Slide out to the left from the center */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%); /* Move off-screen to the left */
+    opacity: 0;
+  }
+}

@@ -15,13 +15,15 @@ const Slider = () => {
     nav: true,
     navText: ["&#x2770;", "&#x2771;"],
     autoplay: true,
-    autoplayTimeout: 2000,
+    autoplayTimeout: 3000,
     autoplayHoverPause: true,
     responsive: {
       0: {
         items: 1,
       },
     },
+    animateIn: "slow-slide-right-in",
+    animateOut: "slow-slide-left-out",
   };
 
   return (
