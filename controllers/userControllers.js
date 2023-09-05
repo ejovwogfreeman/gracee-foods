@@ -1,5 +1,8 @@
 const bcrypt = require("bcryptjs");
 const User = require("../models/userModel");
+const Product = require("../models/productModel");
+const Cart = require("../models/cartModel");
+const Order = require("../models/orderModel");
 const sendEmail = require("../middlewares/emailMiddleware");
 const accessToken = require("../middlewares/accessTokenMiddleware");
 
@@ -19,7 +22,6 @@ const getUser = async (req, res) => {
 //////////UPDATE USER////////
 /////////////////////////////
 const updateUser = async (req, res) => {
-  // const { username } = req.body;
   const userId = req.user._id;
 
   const updateFields = {};
@@ -158,6 +160,43 @@ const resetPassword = async (req, res) => {
 
   return res.status(200).json({ message: "Password reset is successful" });
 };
+
+const addToCart = async (req, res) => {
+  try {
+    const productId = req.params.productId;
+
+    const product = await Product.findById(productId);
+
+    if (!product) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+
+    let cart = await Cart.findOne({ user: req.user._id });
+
+    if (!cart) {
+      cart = new Cart({ user: req.user._id });
+    }
+
+    cart.items.push({ product: productId, quantity: 1 });
+
+    await cart.save();
+
+    res.status(201).json({ message: "Product added to cart", cart });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+module.exports = addToCart;
+
+const removeFromCart = async (req, res) => {};
+
+const increaseQuantity = async (req, res) => {};
+
+const decreaseQuantity = async (req, res) => {};
+
+const clearCart = async (req, res) => {};
 
 module.exports = {
   getUser,
