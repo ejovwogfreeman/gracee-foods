@@ -149,7 +149,7 @@ footer .sub-footer .icon {
   font-size: 33px;
   color: #00302e;
   position: fixed;
-  right: 29px;
+  right: 28px;
   bottom: -100px; /* Start initially at the bottom */
   animation-duration: 0.5s; /* Adjust the duration as needed */
   animation-timing-function: ease-in-out; /* Use ease-in-out for smoother animation */

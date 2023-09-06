@@ -22,7 +22,7 @@ const Footer = () => {
   return (
     <footer>
       <a
-        href="https://wa.me/+2348164471007"
+        href="https://wa.me/+2347047513707"
         className={show ? "showwhatsapp" : "whatsapp"}
       >
         <AiOutlineWhatsApp />
