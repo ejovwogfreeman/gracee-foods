@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/Footer.css";
 // import img1 from "../assets/googleplay.png";
 // import img2 from "../assets/appstore.png";
@@ -7,13 +7,27 @@ import {
   AiOutlineInstagram,
   AiOutlineTwitter,
   AiFillYoutube,
+  AiOutlineWhatsApp,
 } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   let year = new Date().getFullYear();
-
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 500 ? setShow(true) : setShow(false);
+    });
+  }, []);
   return (
     <footer>
+      <Link
+        to="https://wa.me/+2348164471007"
+        className={show ? "showwhatsapp" : "whatsapp"}
+      >
+        <AiOutlineWhatsApp />
+      </Link>
+
       <div className="main-footer">
         <div>
           <h5>Company</h5>
