@@ -21,12 +21,12 @@ const Footer = () => {
   }, []);
   return (
     <footer>
-      <Link
-        to="https://wa.me/+2348164471007"
+      <a
+        href="https://wa.me/+2348164471007"
         className={show ? "showwhatsapp" : "whatsapp"}
       >
         <AiOutlineWhatsApp />
-      </Link>
+      </a>
 
       <div className="main-footer">
         <div>
