@@ -19,3 +19,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+a,
+a:hover,
+a:active {
+  color: black;
+}
