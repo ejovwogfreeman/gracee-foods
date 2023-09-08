@@ -9,7 +9,7 @@ const accessToken = require("../middlewares/accessTokenMiddleware");
 
 const registerUser = async (req, res) => {
   const { email, password } = req.body;
-  let hashedPassword = null; // Declare password outside the try block
+  let hashedPassword = null;
 
   try {
     if (!email || !password) {
@@ -22,7 +22,7 @@ const registerUser = async (req, res) => {
     }
 
     const salt = await bcrypt.genSalt(10);
-    hashedPassword = await bcrypt.hash(password, salt); // Assign the hashed password
+    hashedPassword = await bcrypt.hash(password, salt);
 
     const user = new User({
       username: email.split("@")[0],

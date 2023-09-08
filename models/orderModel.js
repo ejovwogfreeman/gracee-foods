@@ -30,7 +30,7 @@ const orderSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["cooking", "serving", "served", "cancelled"],
+      enum: ["cooking", "serving", "served", "Canceled"],
       default: "cooking",
       required: true,
     },

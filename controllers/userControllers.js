@@ -161,6 +161,9 @@ const resetPassword = async (req, res) => {
   return res.status(200).json({ message: "Password reset is successful" });
 };
 
+/////////////////////////////
+/////////ADD TO CART/////////
+/////////////////////////////
 const addToCart = async (req, res) => {
   try {
     const productId = req.params.productId;
@@ -199,6 +202,9 @@ const addToCart = async (req, res) => {
   }
 };
 
+/////////////////////////////
+//////REMOVE FROM CART///////
+/////////////////////////////
 const removeFromCart = async (req, res) => {
   try {
     const productId = req.params.productId;
@@ -229,6 +235,9 @@ const removeFromCart = async (req, res) => {
   }
 };
 
+///////////////////////////////////////
+//////INCREASE CART ITEM QUANTITY//////
+///////////////////////////////////////
 const increaseCartItemQuantity = async (req, res) => {
   try {
     const productId = req.params.productId;
@@ -258,6 +267,9 @@ const increaseCartItemQuantity = async (req, res) => {
   }
 };
 
+///////////////////////////////////////
+//////DECREASE CART ITEM QUANTITY//////
+///////////////////////////////////////
 const decreaseCartItemQuantity = async (req, res) => {
   try {
     const productId = req.params.productId;
@@ -290,6 +302,9 @@ const decreaseCartItemQuantity = async (req, res) => {
   }
 };
 
+////////////////////////
+//////CLEAR CART////////
+////////////////////////
 const clearCart = async (req, res) => {
   try {
     const userId = req.user._id;
@@ -310,6 +325,9 @@ const clearCart = async (req, res) => {
   }
 };
 
+//////////////////////////
+//////CREATE ORDER////////
+//////////////////////////
 const createOrder = async (req, res) => {
   try {
     const userId = req.user._id;
@@ -341,6 +359,9 @@ const createOrder = async (req, res) => {
   }
 };
 
+////////////////////////
+//////CANCEL ORDER//////
+////////////////////////
 const cancelOrder = async (req, res) => {
   try {
     const orderId = req.params.orderId;
@@ -365,6 +386,39 @@ const cancelOrder = async (req, res) => {
   }
 };
 
+/////////////////////////////
+////////GET ALL ORDERS///////
+/////////////////////////////
+const getAllOrders = async (req, res) => {
+  try {
+    const loggedInUserId = req.user.id;
+    const orders = await Order.find({ user: loggedInUserId });
+    res.status(200).json({ orders });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+/////////////////////////////
+////////GET SINGLE ORDER/////
+/////////////////////////////
+const getSingleOrder = async (req, res) => {
+  const orderId = req.params.id;
+  try {
+    const loggedInUserId = req.user.id;
+    const order = await Order.findOne({ _id: orderId, user: loggedInUserId });
+    if (!order) {
+      res.status(404).json({ message: "Order not found" });
+      return;
+    }
+    res.status(200).json({ order });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
 module.exports = {
   getUser,
   updateUser,
@@ -378,4 +432,6 @@ module.exports = {
   clearCart,
   createOrder,
   cancelOrder,
+  getAllOrders,
+  getSingleOrder,
 };
