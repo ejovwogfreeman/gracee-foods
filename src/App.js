@@ -22,6 +22,7 @@ import img5 from "./assets/bread.png";
 import img6 from "./assets/soup.png";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import Toastify from "./components/Toastify";
+import Navbar from "./components/Navbar";
 
 function App() {
   const meals = [
@@ -131,9 +132,16 @@ function App() {
     });
   }, []);
 
+  const [showSide, setShowSide] = useState(true);
+
+  const handleShowSide = () => {
+    setShowSide(!showSide);
+  };
+
   return (
     <Router>
       <Toastify />
+      <Navbar showSide={showSide} handleShowSide={handleShowSide} />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />

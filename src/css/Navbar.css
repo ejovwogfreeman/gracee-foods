@@ -3,6 +3,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  top: 0px;
+  left: 0px;
   z-index: 100;
   width: 100%;
   padding: 50px 3%;
@@ -67,7 +69,7 @@ nav .links {
   display: flex;
 }
 
-.mui-drawer {
+.side-bar {
   display: none;
 }
 
@@ -102,8 +104,13 @@ li a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+nav svg {
+  font-size: 30px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1080px) {
-  .mui-drawer {
+  .side-bar {
     display: block;
   }
 
