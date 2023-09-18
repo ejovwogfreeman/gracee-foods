@@ -23,6 +23,7 @@ import img6 from "./assets/soup.png";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import Toastify from "./components/Toastify";
 import Navbar from "./components/Navbar";
+import { AiOutlineWhatsApp } from "react-icons/ai";
 
 function App() {
   const meals = [
@@ -132,6 +133,13 @@ function App() {
     });
   }, []);
 
+  const [showWhatsapp, setShowWhatsapp] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 500 ? setShowWhatsapp(true) : setShowWhatsapp(false);
+    });
+  }, []);
+
   const [showSide, setShowSide] = useState(false);
 
   const handleShowSide = () => {
@@ -219,6 +227,12 @@ function App() {
           <KeyboardArrowUpRoundedIcon sx={{ fontSize: 30 }} />
         </Fab>
       </Box>
+      <a
+        href="https://wa.me/+2347047513707"
+        className={showWhatsapp ? "showwhatsapp" : "whatsapp"}
+      >
+        <AiOutlineWhatsApp />
+      </a>
     </Router>
   );
 }

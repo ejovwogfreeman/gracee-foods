@@ -135,36 +135,3 @@ footer .sub-footer .icon {
     opacity: 0; /* Fade out with opacity 0 */
   }
 }
-
-/* Apply the animation to your button */
-.whatsapp,
-.showwhatsapp {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  width: 47px;
-  height: 47px;
-  font-size: 33px;
-  color: #00302e;
-  position: fixed;
-  right: 28px;
-  bottom: -100px; /* Start initially at the bottom */
-  animation-duration: 0.5s; /* Adjust the duration as needed */
-  animation-timing-function: ease-in-out; /* Use ease-in-out for smoother animation */
-}
-
-/* Add the animation name and set it to forwards to keep the final state */
-.showwhatsapp {
-  animation-name: whatsappAnimationIn;
-  animation-fill-mode: forwards;
-  animation-duration: 0.5s; /* Adjust the duration as needed */
-}
-
-/* Add the animation name for the out animation */
-.showwhatsapp.animate-out {
-  animation-name: whatsappAnimationOut;
-  animation-fill-mode: forwards;
-  animation-duration: 0.5s; /* Adjust the duration as needed */
-}

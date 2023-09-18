@@ -1,4 +1,4 @@
-import React, { useEffect, Suspense, lazy } from "react";
+import React from "react";
 // import "../css/Home.css";
 import Header from "../components/Header";
 import Meals from "../components/Meals";

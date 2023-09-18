@@ -7,27 +7,13 @@ import {
   AiOutlineInstagram,
   AiOutlineTwitter,
   AiFillYoutube,
-  AiOutlineWhatsApp,
 } from "react-icons/ai";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   let year = new Date().getFullYear();
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      window.scrollY > 500 ? setShow(true) : setShow(false);
-    });
-  }, []);
+
   return (
     <footer>
-      <a
-        href="https://wa.me/+2347047513707"
-        className={show ? "showwhatsapp" : "whatsapp"}
-      >
-        <AiOutlineWhatsApp />
-      </a>
-
       <div className="main-footer">
         <div>
           <h5>Company</h5>
