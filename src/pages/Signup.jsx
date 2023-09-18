@@ -52,7 +52,7 @@ const Signup = () => {
       </div>
       <div className="signin-text">
         <form onSubmit={handleSubmit}>
-          <h1>Welcome to Lilies!</h1>
+          <h1>Welcome</h1>
           <div className="eye-cont">
             <input
               type="text"
