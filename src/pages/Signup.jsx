@@ -36,10 +36,8 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // sessionStorage.setItem("user", JSON.stringify(form));
-
+    sessionStorage.setItem("user", JSON.stringify(form));
     toast.success("Sign Up Successful");
-
     navigate("/signin");
   };
 

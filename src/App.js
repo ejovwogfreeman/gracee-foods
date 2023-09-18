@@ -26,6 +26,7 @@ import Navbar from "./components/Navbar";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 
 function App() {
+  let user = sessionStorage.getItem("user");
   const meals = [
     {
       id: 1,
@@ -166,6 +167,7 @@ function App() {
         showSide={showSide}
         handleShowSide={handleShowSide}
         count={cartItems.length}
+        user={user}
       />
 
       <SingleFood

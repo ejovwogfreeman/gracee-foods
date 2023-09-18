@@ -34,11 +34,19 @@ const Signin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // let user = JSON.parse(sessionStorage.getItem("user"));
+    let user = JSON.parse(sessionStorage.getItem("user"));
 
-    toast.success("Login Successful");
-
-    navigate("/dashboard");
+    if (
+      loginData?.email == user?.email &&
+      loginData?.password == user?.password
+    ) {
+      toast.success("Login Successful");
+      setTimeout(() => {
+        window.location.replace("/dashboard");
+      }, 3000);
+    } else {
+      toast.error("Wrong email or password");
+    }
   };
 
   return (
