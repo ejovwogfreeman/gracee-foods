@@ -41,17 +41,21 @@
   display: block;
   width: 100%;
   padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
 }
 
 .signin-container .signin-text form button {
   display: block;
   width: 100%;
-  border: none;
-  outline: none;
   color: white;
   background-color: #00302e;
   padding: 7px 10px;
   transition: 0.5s ease-in-out;
+  border: none;
+  outline: none;
+  border-radius: 3px;
 }
 
 .signin-container .signin-text form button:hover {
@@ -73,7 +77,7 @@
 
 .btnShow {
   position: absolute;
-  top: 60%;
+  top: 15%;
   right: 3%;
   margin-left: 0px;
   cursor: pointer;

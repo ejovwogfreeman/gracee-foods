@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import img from "../assets/signup.png";
 import "../css/Signin.css";
 import { Link, useNavigate } from "react-router-dom";
-// import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import ScrollToTop from "../components/ScrollToTop";
@@ -36,7 +36,7 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    sessionStorage.setItem("user", JSON.stringify(form));
+    // sessionStorage.setItem("user", JSON.stringify(form));
 
     toast.success("Sign Up Successful");
 
