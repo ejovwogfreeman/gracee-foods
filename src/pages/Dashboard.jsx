@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import "../css/Dashboard.css";
-import { Link } from "react-router-dom";
-import img7 from "../assets/profile.png";
 import ScrollToTop from "../components/ScrollToTop";
-import SideNav from "../components/SideNav";
-import Navbar from "../components/Navbar";
 
-const Dashboard = ({ meals, onAdd, count }) => {
+const Dashboard = ({ meals, onAdd, count, openSingleFoodModal }) => {
   let user = JSON.parse(sessionStorage.getItem("user"));
   let timeDay = new Date().getHours();
   let timeGreet = null;
@@ -23,7 +19,6 @@ const Dashboard = ({ meals, onAdd, count }) => {
   return (
     <div className="dashboard-container">
       <ScrollToTop count={count} />
-      {/* <Navbar /> */}
       {user ? (
         <div className="profile-head">
           <div className="user-name">
@@ -41,12 +36,12 @@ const Dashboard = ({ meals, onAdd, count }) => {
         {meals.map((meal) => {
           return (
             <div key={meal.id} className="meals">
-              <Link to={`/meal/${meal.id}`}>
-                <img src={meal.image} alt="" />
-              </Link>
-              <Link to={`/meal/${meal.id}`} className="h5-link">
-                <h5>{meal.title}</h5>
-              </Link>
+              <img
+                src={meal.image}
+                alt=""
+                onClick={() => openSingleFoodModal(meal)}
+              />
+              <h5>{meal.title}</h5>
               <p>{meal.description}</p>
               <div className="price-action">
                 <strong>₦{meal.price}</strong>

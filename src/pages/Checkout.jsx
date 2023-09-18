@@ -1,5 +1,4 @@
 import React from "react";
-import Background from "./Background.jsx";
 import "../css/SingleFood.css";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
@@ -17,9 +16,6 @@ const Checkout = () => {
   return (
     <div className="singlefood-container">
       <ScrollToTop />
-      <div className="food">
-        <Background />
-      </div>
       <div className="bg-color"></div>
       <div className="singlefood">
         <Link to="/dashboard">

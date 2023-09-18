@@ -10,29 +10,29 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 const SideNav = ({ count, handleShowSide }) => {
   return (
     <>
-      <div className="dark-bg"></div>
+      <div className="dark-bg" onClick={handleShowSide}></div>
       <div className="sidebar">
         <div className="logo">
-          <Link to="/">
+          <Link to="/" onClick={handleShowSide}>
             <img src={logo} alt="" /> <h2>Lilies</h2>
           </Link>
           <AiOutlineClose onClick={handleShowSide} />
         </div>
         <ul className="menus">
           <li>
-            <Link to="/dashboard">
+            <Link to="/dashboard" onClick={handleShowSide}>
               <BiHome className="icon" />
               Dashboard
             </Link>
           </li>
           <li>
-            <Link to="/profile">
+            <Link to="/profile" onClick={handleShowSide}>
               <CgProfile className="icon" />
               Your Profile
             </Link>
           </li>
           <li>
-            <Link to="/orders">
+            <Link to="/orders" onClick={handleShowSide}>
               <AiOutlineGift className="icon" />
               Orders{" "}
               <div className="x" style={{ background: "#06E775" }}>
@@ -41,7 +41,7 @@ const SideNav = ({ count, handleShowSide }) => {
             </Link>
           </li>
           <li>
-            <Link to="/cart">
+            <Link to="/cart" onClick={handleShowSide}>
               <HiOutlineShoppingCart className="icon" />
               Your Cart{" "}
               <div className="x" style={{ background: "#F3C294" }}>

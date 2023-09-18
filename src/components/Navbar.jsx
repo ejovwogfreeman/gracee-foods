@@ -1,15 +1,16 @@
 import React from "react";
 import "../css/Navbar.css";
-// import MuiDrawer from "./MuiDrawer";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import SideNav from "./SideNav";
 import { AiOutlineMenu } from "react-icons/ai";
+import { useLocation } from "react-router-dom";
 
-const Navbar = ({ showSide, handleShowSide }) => {
+const Navbar = ({ count, showSide, handleShowSide }) => {
+  const location = useLocation();
   return (
     <>
-      <nav>
+      <nav className={location.pathname === "/" ? "nav" : "nav white"}>
         <div className="logo">
           <Link to="/">
             <img src={logo} alt="" />
@@ -42,7 +43,11 @@ const Navbar = ({ showSide, handleShowSide }) => {
         </div>
       </nav>
       {showSide && (
-        <SideNav showSide={showSide} handleShowSide={handleShowSide} />
+        <SideNav
+          showSide={showSide}
+          handleShowSide={handleShowSide}
+          count={count}
+        />
       )}
     </>
   );

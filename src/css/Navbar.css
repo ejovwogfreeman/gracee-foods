@@ -1,4 +1,4 @@
-nav {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,52 +7,65 @@ nav {
   left: 0px;
   z-index: 100;
   width: 100%;
-  padding: 50px 3%;
+  padding: 0px 3%;
   color: #eee;
   background-color: #00302e;
-  height: 80px;
+  height: 100px;
 }
 
-nav .logo {
+.white {
+  color: black;
+  background-color: rgba(256, 256, 256, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav .logo {
   position: relative;
   top: -35px;
 }
 
-nav .logo img {
+.nav .logo img {
   width: 50px;
   display: block;
 }
 
-nav .logo h2 {
+.nav .logo h2 {
   margin-top: auto;
   margin-left: 20px;
 }
 
-nav .logo a {
+.nav .logo a {
   color: white;
   display: flex;
   align-items: center;
   position: absolute;
 }
 
-nav .logo a:hover {
+.nav .logo a:hover {
   color: white;
 }
 
-nav .logo .text {
+.white .logo a {
+  color: black;
+}
+.white .logo a:hover {
+  color: black;
+}
+
+.nav .logo .text {
   position: relative;
   top: -5px;
   left: -10px;
 }
 
-nav .logo .foods {
+.nav .logo .foods {
   position: absolute;
   letter-spacing: 21px;
   left: 23px;
   top: 33px;
 }
 
-nav a {
+.nav a {
   font-size: 16px;
   padding: 10px 15px;
   color: white;
@@ -61,11 +74,19 @@ nav a {
   border-radius: 5px;
 }
 
-nav a:hover {
+.nav a:hover {
   color: white;
 }
 
-nav .links {
+.white a {
+  color: black;
+}
+
+.white a:hover {
+  color: black;
+}
+
+.nav .links {
   display: flex;
 }
 
@@ -104,7 +125,7 @@ li a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-nav svg {
+.nav svg {
   font-size: 30px;
   cursor: pointer;
 }
@@ -114,21 +135,31 @@ nav svg {
     display: block;
   }
 
-  nav .links {
+  .nav .links {
     display: none;
+  }
+  .white {
+    color: black;
+    background-color: rgba(256, 256, 256, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
 
 @media screen and (max-width: 780px) {
-  nav {
+  .nav {
     padding-left: 1%;
     padding-right: 1%;
     border-bottom: 1px solid rgba(256, 256, 256, 0.5);
   }
-  nav .logo .foods {
+  .nav .logo .foods {
     position: absolute;
     letter-spacing: 13px;
     left: 23px;
     top: 33px;
+  }
+  .white {
+    color: black;
+    background-color: rgba(256, 256, 256, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 }

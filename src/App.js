@@ -132,16 +132,43 @@ function App() {
     });
   }, []);
 
-  const [showSide, setShowSide] = useState(true);
+  const [showSide, setShowSide] = useState(false);
 
   const handleShowSide = () => {
     setShowSide(!showSide);
   };
 
+  const [singleFood, setSingleFood] = useState(false);
+  const [selectedFood, setSelectedFood] = useState(null);
+
+  const openSingleFoodModal = (meal) => {
+    setSelectedFood(meal);
+    setSingleFood(true);
+  };
+
+  const closeSingleFoodModal = () => {
+    setSingleFood(false);
+    setSelectedFood(null);
+  };
+
   return (
     <Router>
       <Toastify />
-      <Navbar showSide={showSide} handleShowSide={handleShowSide} />
+      <Navbar
+        showSide={showSide}
+        handleShowSide={handleShowSide}
+        count={cartItems.length}
+      />
+
+      <SingleFood
+        onAdd={onAdd}
+        onRemove={onRemove}
+        quantity={cartItems}
+        singleFood={singleFood}
+        closeSingleFoodModal={closeSingleFoodModal}
+        meal={selectedFood}
+      />
+
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
@@ -150,27 +177,26 @@ function App() {
           <Route
             path="/dashboard"
             element={
-              <Dashboard meals={meals} onAdd={onAdd} count={cartItems.length} />
+              <Dashboard
+                meals={meals}
+                onAdd={onAdd}
+                openSingleFoodModal={openSingleFoodModal}
+              />
             }
           />
         </Route>
         <Route path="/profile" element={<Profile />} />
-        <Route
-          path="/meal/:id"
-          element={meals.map((meal) => (
-            <SingleFood
-              key={meal.id}
-              meal={meal}
-              onAdd={onAdd}
-              onRemove={onRemove}
-              quantity={cartItems}
-            />
-          ))}
-        />
         <Route path="/checkout" element={<Checkout />} />
         <Route
           path="/cart"
-          element={<Cart meals={cartItems} onRemove={onRemove} />}
+          element={
+            <Cart
+              meals={cartItems}
+              onAdd={onAdd}
+              onRemove={onRemove}
+              openSingleFoodModal={openSingleFoodModal}
+            />
+          }
         />
         <Route
           path="/orders"

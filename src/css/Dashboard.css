@@ -1,12 +1,12 @@
 .dashboard-container {
-  padding: 100px 5% 30px;
+  padding: 120px 5% 30px;
 }
 
 .dashboard-container .profile-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .dashboard-container .profile-head img {
@@ -25,11 +25,22 @@
   color: #e2b887;
 }
 
+.dashboard-container .meals-box h5 {
+  font-weight: bold;
+}
+
+.dashboard-container .meals-box .meals {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 5px;
+}
+
 .dashboard-container .meals-box .meals img {
   width: 60%;
   display: block;
   margin: auto;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .dashboard-container .meals-box .price-action {

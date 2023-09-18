@@ -1,105 +1,53 @@
 import React from "react";
-import Background from "./Background.jsx";
 import "../css/Cart.css";
-// import img1 from '../assets/burger1.png'
-// import img2 from '../assets/pasta1.png'
-// import img3 from '../assets/meat1.png'
-// import img4 from '../assets/indomie.png'
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import ScrollToTop from "../components/ScrollToTop.jsx";
 
 const Cart = ({ meals }) => {
-  // const meals = [
-  //     {
-  //         id: 1,
-  //         image: img1,
-  //         title: 'Stir fry Pasta',
-  //         description: 'Stir fry Pasta yada yada yada because of the season',
-  //         action: 'remove',
-  //         quantity: 3,
-  //         price: 1000,
-  //         status: 'Delivered',
-  //     },
-  //     {
-  //         id: 2,
-  //         image: img2,
-  //         title: 'Meat Balls',
-  //         description: 'Meat Balls yada yada yada because of the season',
-  //         action: 'remove',
-  //         quantity: 3,
-  //         price: 1000,
-  //         status: 'Delivered',
-  //     },
-  //     {
-  //         id: 3,
-  //         image: img3,
-  //         title: 'Burger Meal',
-  //         description: 'Burger Meal yada yada yada because of the season',
-  //         action: 'remove',
-  //         quantity: 3,
-  //         price: 1000,
-  //         status: 'Cooking',
-  //     },
-  //     {
-  //         id: 4,
-  //         image: img4,
-  //         title: 'Fried Indomie',
-  //         description: 'Burger Meal yada yada yada because of the season',
-  //         action: 'remove',
-  //         quantity: 3,
-  //         price: 1000,
-  //         status: 'Cooking',
-  //     },
-  // ]
-
+  const totalPrice = meals.reduce((a, c) => a + c.price * c.quantity, 0);
   return (
     <div className="cart-container">
       <ScrollToTop />
-      <div className="cart">
-        <Background />
-      </div>
-      <div className="bg-color"></div>
-      <div className="cart-box">
+      <div className="top-bar">
         <Link to="/dashboard">
           <AiOutlineArrowLeft className="go-back" />
         </Link>
-        <h3>Your Orders</h3>
-        <div className="items">
-          <div className="image">
-            <strong className="t-amnt">Item</strong>
-          </div>
-          <div className="quantity" id="end">
-            <strong>Qty</strong>
-            <strong>Sub-total</strong>
-            <strong>Status </strong>
-          </div>
-        </div>
+        <p className="total">
+          Total: &nbsp;{" "}
+          <strong className="t-amnt">₦{totalPrice.toFixed(2)}</strong>{" "}
+        </p>
+      </div>
+      <h3>Your Orders</h3>
+      <table>
+        <tr>
+          <th>MEAL</th>
+          <th>QUANTITY</th>
+          <th>SUB TOTAL</th>
+          <th>STATUS</th>
+        </tr>
         {meals.map((meal) => {
           return (
-            <div key={meal.id} className="items">
-              <div className="image">
+            <tr key={meal.id}>
+              <td className="image">
                 <img src={meal.image} alt="" />
                 <div className="title">
                   <h5>{meal.title}</h5>
-                  <button>{meal.remaction}</button>
                 </div>
-              </div>
-              <div className="quantity" id="end">
-                <strong>{meal.quantity}</strong>
-                <strong>₦{meal.quantity * meal.price}</strong>
-                <strong
-                  className={
-                    meal.status === "Delivered" ? "delivered" : "cooking"
-                  }
-                >
-                  {meal.status}
-                </strong>
-              </div>
-            </div>
+              </td>
+              <td>3</td>
+              <td>₦{meal.quantity * meal.price}</td>
+              <td
+                className={
+                  meal.status === "Delivered" ? "delivered" : "cooking"
+                }
+              >
+                {meal.status}
+              </td>
+            </tr>
           );
         })}
-      </div>
+      </table>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import React from "react";
-import Background from "./Background.jsx";
 import "../css/SingleFood.css";
 import profile from "../assets/profile.png";
 // import { AiFillPlusSquare, AiFillMinusSquare } from "react-icons/ai";
@@ -26,9 +25,6 @@ const Profile = () => {
   return (
     <div className="singlefood-container">
       <ScrollToTop />
-      <div className="food">
-        <Background />
-      </div>
       <div className="bg-color"></div>
       <div className="singlefood">
         <Link to="/dashboard">
