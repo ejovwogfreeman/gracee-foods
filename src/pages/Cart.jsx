@@ -30,38 +30,40 @@ const Cart = ({ meals, onRemove, openSingleFoodModal }) => {
       <h3>Your Cart</h3>
       {meals.length > 0 ? (
         <>
-          <table>
-            <tr>
-              <th>MEAL</th>
-              <th>QUANTITY</th>
-              <th>UNIT PRICE</th>
-              <th>SUB TOTAL </th>
-              <th>ACTION</th>
-            </tr>
+          <div className="table">
+            <table>
+              <tr>
+                <th>MEAL</th>
+                <th>QUANTITY</th>
+                <th>UNIT PRICE</th>
+                <th>SUB TOTAL </th>
+                <th>ACTION</th>
+              </tr>
 
-            {meals.map((meal) => {
-              return (
-                <tr key={meal.id}>
-                  <td className="image">
-                    <img
-                      src={meal.image}
-                      alt=""
-                      onClick={() => openSingleFoodModal(meal)}
-                    />
-                    <div className="title">
-                      <h5>{meal.title}</h5>
-                    </div>
-                  </td>
-                  <td>{meal.quantity}</td>
-                  <td>₦{meal.price}</td>
-                  <td>₦{meal.quantity * meal.price}</td>
-                  <td>
-                    <button onClick={() => onRemove(meal)}>REMOVE</button>
-                  </td>
-                </tr>
-              );
-            })}
-          </table>
+              {meals.map((meal) => {
+                return (
+                  <tr key={meal.id}>
+                    <td className="image">
+                      <img
+                        src={meal.image}
+                        alt=""
+                        onClick={() => openSingleFoodModal(meal)}
+                      />
+                      <div className="title">
+                        <h5>{meal.title}</h5>
+                      </div>
+                    </td>
+                    <td>{meal.quantity}</td>
+                    <td>₦{meal.price}</td>
+                    <td>₦{meal.quantity * meal.price}</td>
+                    <td>
+                      <button onClick={() => onRemove(meal)}>REMOVE</button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </table>
+          </div>
           <button className="button" onClick={handleSubmit}>
             Checkout
           </button>

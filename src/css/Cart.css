@@ -90,7 +90,13 @@ table button {
 
 @media screen and (max-width: 450px) {
   table {
+    background-color: transparent;
+    width: 650px;
+  }
+  .table {
     width: 100%;
     overflow-x: scroll;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
   }
 }

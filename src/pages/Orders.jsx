@@ -19,35 +19,37 @@ const Cart = ({ meals }) => {
         </p>
       </div>
       <h3>Your Orders</h3>
-      <table>
-        <tr>
-          <th>MEAL</th>
-          <th>QUANTITY</th>
-          <th>SUB TOTAL</th>
-          <th>STATUS</th>
-        </tr>
-        {meals.map((meal) => {
-          return (
-            <tr key={meal.id}>
-              <td className="image">
-                <img src={meal.image} alt="" />
-                <div className="title">
-                  <h5>{meal.title}</h5>
-                </div>
-              </td>
-              <td>3</td>
-              <td>₦{meal.quantity * meal.price}</td>
-              <td
-                className={
-                  meal.status === "Delivered" ? "delivered" : "cooking"
-                }
-              >
-                {meal.status}
-              </td>
-            </tr>
-          );
-        })}
-      </table>
+      <div className="table">
+        <table>
+          <tr>
+            <th>MEAL</th>
+            <th>QUANTITY</th>
+            <th>SUB TOTAL</th>
+            <th>STATUS</th>
+          </tr>
+          {meals.map((meal) => {
+            return (
+              <tr key={meal.id}>
+                <td className="image">
+                  <img src={meal.image} alt="" />
+                  <div className="title">
+                    <h5>{meal.title}</h5>
+                  </div>
+                </td>
+                <td>3</td>
+                <td>₦{meal.quantity * meal.price}</td>
+                <td
+                  className={
+                    meal.status === "Delivered" ? "delivered" : "cooking"
+                  }
+                >
+                  {meal.status}
+                </td>
+              </tr>
+            );
+          })}
+        </table>
+      </div>
     </div>
   );
 };
