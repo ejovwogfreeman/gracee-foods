@@ -87,3 +87,10 @@ table button {
 .cooking {
   color: red;
 }
+
+@media screen and (max-width: 450px) {
+  table {
+    width: 100%;
+    overflow-x: scroll;
+  }
+}
