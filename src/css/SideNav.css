@@ -25,14 +25,14 @@
     z-index: 1000;
   }
 
-  .sidebar .logo {
+  .sidebar .logo-cont {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-right: 13px;
   }
 
-  .sidebar .logo svg {
+  .sidebar .logo-cont svg {
     font-size: 20px;
     padding: 7px;
     width: 40px;
@@ -42,7 +42,7 @@
     transition: 0.5s ease-in-out;
     cursor: pointer;
   }
-  .sidebar .logo svg:hover {
+  .sidebar .logo-cont svg:hover {
     color: red;
   }
 
@@ -183,4 +183,39 @@
     right: 5px;
     position: absolute;
   }
+}
+
+.sidebar .logo {
+  position: relative;
+  top: -35px;
+  left: 10px;
+}
+
+.sidebar .logo h2 {
+  margin-top: auto;
+  margin-left: 17px;
+}
+
+.sidebar .logo a {
+  color: black;
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+
+.sidebar .logo a:hover {
+  color: black;
+}
+
+.sidebar .logo .text {
+  position: relative;
+  top: -5px;
+  left: -10px;
+}
+
+.sidebar .logo .foods {
+  position: absolute;
+  letter-spacing: 9px;
+  left: 19px;
+  top: 20px;
 }

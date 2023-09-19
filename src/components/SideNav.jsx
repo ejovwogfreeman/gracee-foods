@@ -19,10 +19,16 @@ const SideNav = ({ count, handleShowSide, user, logout }) => {
     <>
       <div className="dark-bg" onClick={handleShowSide}></div>
       <div className="sidebar">
-        <div className="logo">
-          <Link to="/" onClick={handleShowSide}>
-            <img src={logo} alt="" /> <h2>Lilies</h2>
-          </Link>
+        <div className="logo-cont">
+          <div className="logo">
+            <Link to="/">
+              <img src={logo} alt="" />
+              <span className="text">
+                <h2>GRACEE</h2>
+                <span className="foods">foods</span>
+              </span>
+            </Link>
+          </div>
           <AiOutlineClose onClick={handleShowSide} />
         </div>
         <ul className="menus">

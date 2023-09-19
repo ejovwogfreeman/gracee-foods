@@ -32,7 +32,7 @@ const Meals = () => {
       <p className="p">
         Check our special meals of the day and get discounts on all our meals{" "}
         <br />
-        and swift delivery to every location in within Ilorin.
+        and swift delivery to every location in within Benin.
       </p>
       <div className="meals-box">
         {meals.map((meal) => {
