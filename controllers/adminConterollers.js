@@ -1,6 +1,6 @@
 const User = require("../models/userModel");
-const Product = requre("../models/productModel");
-const Order = requre("../models/orderModel");
+const Product = require("../models/productModel");
+const Order = require("../models/orderModel");
 
 /////////////////////////////
 ////////GET ALL USERS////////
@@ -84,7 +84,7 @@ const uploadProduct = async (req, res) => {
 /////////////////////////////
 const updateProduct = async (req, res) => {
   const productId = req.params.id;
-  const { ProductName, description, price, category } = req.body;
+  const { productName, description, price, category } = req.body;
 
   try {
     const product = await Product.findById(productId);
@@ -93,7 +93,7 @@ const updateProduct = async (req, res) => {
       return res.status(404).json({ message: "Product not found" });
     }
 
-    product.ProductName = ProductName;
+    product.productName = productName;
     product.description = description;
     product.price = price;
     product.category = category;
