@@ -2,11 +2,10 @@
   "name": "gbgram-api",
   "version": "1.0.0",
   "description": "This is an api for gbgram",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "build": "webpack"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -32,9 +31,5 @@
     "multer-gridfs-storage": "^5.0.2",
     "nodemailer": "^6.9.1",
     "nodemon": "^2.0.21"
-  },
-  "devDependencies": {
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
   }
 }
